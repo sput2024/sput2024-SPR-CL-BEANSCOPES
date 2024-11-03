@@ -6,6 +6,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  * The @Configuration class is where the beans of your Spring project will be defined.
@@ -37,10 +38,16 @@ public class Application {
 
     /**
      * TODO: correct the following code so that a new ScopedBean is instantiated every time the labBean is requested.
-     */
-    @Bean
-    public ScopedBean labBean(){
-        return new ScopedBean();
+          * @param ScopedBean 
+          */
+         @Bean
+         @Scope("prototype")
+         public ScopedBean labBean(){
+          
+                 
+         return new ScopedBean ();
+      
+
     }
 
     /**
